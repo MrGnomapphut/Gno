@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Love Password</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      color: #fff;
+      text-shadow: 2px 2px 4px #00000050;
+    }
+
+    .input-container {
+      perspective: 1000px;
+      margin-top: 20px;
+    }
+
+    input[type="password"] {
+      padding: 15px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      transform: rotateX(10deg) rotateY(5deg);
+      transition: all 0.3s ease-in-out;
+    }
+
+    input[type="password"]:focus {
+      transform: rotateX(0deg) rotateY(0deg) scale(1.05);
+      outline: none;
+      box-shadow: 0 10px 25px rgba(255, 0, 127, 0.4);
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: #ff6b81;
+      border: none;
+      border-radius: 30px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(255, 107, 129, 0.3);
+      transition: transform 0.2s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>ใส่รหัสรักของเธอ 💖</h1>
+  <div class="input-container">
+    <input type="password" id="password" placeholder="ใส่รหัสลับ...">
+    <button class="btn" onclick="checkPassword()">ไปต่อ 💌</button>
+  </div>
+
+  <script>
+    const correctPassword = "181206"; // ตั้งรหัสผ่านตรงนี้
+    const redirectUrl = "https://example.com"; // ใส่ลิงก์ที่จะไปหลังใส่รหัสถูกต้อง
+
+    function checkPassword() {
+      const input = document.getElementById("password").value;
+      if (input === correctPassword) {
+        window.location.href = redirectUrl;
+      } else {
+        alert("รหัสไม่ถูกต้องน้าา 😳 ลองอีกครั้ง~");
+      }
+    }
+  </script>
+
+</body>
+</html>
